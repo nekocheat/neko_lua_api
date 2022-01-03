@@ -10,6 +10,7 @@ parameters: string alert_message
 escape from tarkov functions:
 
 parameters: from(x,y,z)
+
 return type: EFT.Player*
 - `GetAimbotTarget(from)`
 
@@ -21,18 +22,23 @@ return type: EFT.GameWorld*
 
 misc:
 parameters: string module_name
+
 return type: pointer to module base
 - `GetModuleBase(module_name)`
 
 parameters: string namespace, string class, string field_name
+
 return type: Fields offset
 - `GetFieldOffset(namespace, class, field_name)`
 
 parameters: string namespace, string class, string field_name, int arg_count
+
 return type: Offset to the compiled methods address
+
 note: will not work if the method hasn't been compiled yet
 - `GetCompiledJitMethodAddress(namespace, class, field_name, arg_count)`
 
 parameters: string namespace, string class, string field_name, int arg_count, pointer to our function
+
 note: will not work if the method hasn't been compiled yet
 - `HookJitMethod(namespace, class, field_name, arg_count, our_function_ptr)`
