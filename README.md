@@ -44,5 +44,6 @@ note: will not work if the method hasn't been compiled yet
 - `HookJitMethod(namespace, class, field_name, arg_count, our_function_ptr)`
 
 callbacks:
+
 notes: Will run inside unity thread in an update function
 - `Update()`
