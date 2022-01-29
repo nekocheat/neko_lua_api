@@ -1,8 +1,8 @@
 # neko lua api.
 renderer functions:
 
-parameters: from(x,y), to(x1,y1), thickness, color(r,g,b,alpha)
-- `RenderLine(x, y, x1, y1, color, thickness)`
+parameters: from(x,y), to(x1,y1), color(r,g,b,alpha), thickness
+- `RenderLine(x, y, x1, y1, r, g, b, a, thickness)`
 
 parameters: pos(x,y), string text, color(r,g,b,alpha), centered, stroke, outline_color(r,g,b,alpha)
 - `RenderText(x, y, text, r, g, b, a, centered, stroked, outline_r, outline_b, outline_g, outline_a)`
