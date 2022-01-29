@@ -42,8 +42,6 @@ note: will not work if the method hasn't been compiled yet
 - `GetCompiledJitMethodAddress(namespace, class, field_name, arg_count)`
 
 parameters: string namespace, string class, string field_name, int arg_count, pointer to our function
-
-note: will not work if the method hasn't been compiled yet
 - `HookJitMethod(namespace, class, field_name, arg_count, our_function_ptr)`
 
 callbacks:
