@@ -44,8 +44,6 @@ note: will not work if the method hasn't been compiled yet
 - `UnhookMethod(namespace, class, field_name, arg_count)`
 
 parameters: string namespace, string class, string field_name, int arg_count, pointer to our function
-- //ffi c def
-- //void HookMethod (const char* _namespace, const char* _class, const char* _methodName, int argCount, void* ourFunction );
 - `HookMethod(namespace, class, field_name, arg_count, our_function_ptr)`
 
 ```lua
@@ -57,12 +55,10 @@ end
 
 ffi.cdef[[
 typedef void (__fastcall *HookCallbackExample)();
-void HookMethod (const char* _namespace, const char* _class, const char* _methodName, int argCount, void* ourFunction );
 ]]
 
 local cb = ffi.cast("HookCallbackExample", UpdateHook)
-
-ffi.C.HookMethod("EFT", "ClientApplication", "Update", -1, cb)
+HookJitMethod("EFT", "ClientApplication", "Update", -1, tostring(ffi.cast("uint64_t", cb)))
 
 function Unload()
   UnhookMethod("EFT", "ClientApplication", "Update", -1)
