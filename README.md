@@ -47,8 +47,8 @@ parameters: string namespace, string class, string field_name, int arg_count, po
 //ffi c def
 //void HookMethod (const char* _namespace, const char* _class, const char* _methodName, int argCount, void* ourFunction );
 - `HookMethod(namespace, class, field_name, arg_count, our_function_ptr)`
-- ```local ffi = require("ffi")
 
+```local ffi = require("ffi")
 function UpdateHook(this)    
     RenderLine(100, 100, 100, 200, 255, 255, 255, 255, 1)
     RenderText(200, 200, "LOL", 255, 255, 255, 255, true, true, 0, 0, 0, 255)
