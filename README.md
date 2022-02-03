@@ -44,8 +44,8 @@ note: will not work if the method hasn't been compiled yet
 - `UnhookMethod(namespace, class, field_name, arg_count)`
 
 parameters: string namespace, string class, string field_name, int arg_count, pointer to our function
-//ffi c def
-//void HookMethod (const char* _namespace, const char* _class, const char* _methodName, int argCount, void* ourFunction );
+- //ffi c def
+- //void HookMethod (const char* _namespace, const char* _class, const char* _methodName, int argCount, void* ourFunction );
 - `HookMethod(namespace, class, field_name, arg_count, our_function_ptr)`
 
 ```local ffi = require("ffi")
