@@ -48,6 +48,7 @@ parameters: string namespace, string class, string field_name, int arg_count, po
 //void HookMethod (const char* _namespace, const char* _class, const char* _methodName, int argCount, void* ourFunction );
 - `HookMethod(namespace, class, field_name, arg_count, our_function_ptr)`
 - example:
+
 `local ffi = require("ffi")
 
 function UpdateHook(this)    
@@ -66,12 +67,12 @@ ffi.C.HookMethod("EFT", "ClientApplication", "Update", -1, cb)`
 
 function Unload()
   UnhookMethod("EFT", "ClientApplication", "Update", -1")
-end
+end`
 
 callbacks:
 
 notes: Will run inside unity thread in an update function
 - `Update()`
 
-notes: Will run when lua is being unloaded, this will unhook everything you might have hooked
+notes: Will run when lua is being unloaded, you should unhook everythnig you've hooked here
 - `Unload()`
