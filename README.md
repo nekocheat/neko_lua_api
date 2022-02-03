@@ -62,10 +62,10 @@ void HookMethod (const char* _namespace, const char* _class, const char* _method
 
 local cb = ffi.cast("HookCallbackExample", UpdateHook)
 
-ffi.C.HookMethod("EFT", "ClientApplication", "Update", -1, cb)`
+ffi.C.HookMethod("EFT", "ClientApplication", "Update", -1, cb)
 
 function Unload()
-  UnhookMethod("EFT", "ClientApplication", "Update", -1")
+  UnhookMethod("EFT", "ClientApplication", "Update", -1)
 end
 ```
 
