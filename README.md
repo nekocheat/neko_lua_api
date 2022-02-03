@@ -48,7 +48,7 @@ parameters: string namespace, string class, string field_name, int arg_count, po
 - //void HookMethod (const char* _namespace, const char* _class, const char* _methodName, int argCount, void* ourFunction );
 - `HookMethod(namespace, class, field_name, arg_count, our_function_ptr)`
 
-```c++
+```lua
 local ffi = require("ffi")
 function UpdateHook(this)    
     RenderLine(100, 100, 100, 200, 255, 255, 255, 255, 1)
