@@ -65,7 +65,8 @@ ffi.C.HookMethod("EFT", "ClientApplication", "Update", -1, cb)`
 
 function Unload()
   UnhookMethod("EFT", "ClientApplication", "Update", -1")
-end```
+end
+```
 
 callbacks:
 
