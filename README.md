@@ -110,12 +110,14 @@ local ffi = require("ffi")
 local colorBuffer = ffi.new("float[4]", {0,0,0,0})
 local checkboxBuffer = ffi.new("bool[1]", false)
 local sliderBuffer = ffi.new("float[1]", 0)
+local comboBuffer = ffi.new("int[1]", 0)
 
 function LuaMenuFirstChild()
   ImGuiText("test")
   ImGuiColorEdit4("test", tostring(ffi.cast("uint64_t", colorBuffer)))
   ImGuiCheckbox("test checkbox", tostring(ffi.cast("uint64_t", checkboxBuffer)))
   ImGuiSliderFloat("test slider", tostring(ffi.cast("uint64_t", sliderBuffer)), 0, 24, "%.2f" )
+  ImGuiCombo("test combo", tostring(ffi.cast("uint64_t", comboBuffer)), "item1\0Item2\0Item3\0Item4" )
   if(ImGuiButton("test button", 0,0))
   then
     --button was pressed
@@ -128,6 +130,7 @@ end
 function LuaMenuSecondChild()
   ImGuiText("test second child")
 end
+
 ```
 
 > callbacks:
