@@ -1,5 +1,5 @@
 # neko lua api.
-renderer functions:
+> renderer functions:
 
 parameters: from(x,y), to(x1,y1), color(r,g,b,alpha), thickness
 - `RenderLine(x, y, x1, y1, r, g, b, a, thickness)`
@@ -10,7 +10,7 @@ parameters: pos(x,y), string text, color(r,g,b,alpha), centered, stroke, outline
 parameters: string alert_message
 - `AddAlert(alert_message)`
 
-escape from tarkov functions:
+> escape from tarkov functions:
 
 parameters: from(x,y,z)
 
@@ -23,7 +23,7 @@ return type: EFT.Player*
 return type: EFT.GameWorld*
 - `GetGameWorld()`
 
-misc:
+> misc:
 parameters: string module_name
 
 return type: pointer to module base
@@ -67,6 +67,7 @@ end
 
 > ImGui
 
+parameters:
 - `void ImGuiSetItemDefaultFocus()`
 
 parameters: string name, bool isSelected, int imguiFlags, Vector2 size, Vector2 padding
@@ -84,18 +85,27 @@ parameters: string label, string floatArrayPointer, float min_value, float max_v
 parameters: string label, string floatArrayPointer
 - `bool ImGuiColorEdit4`
 
-parameters: string label, Vector2 size
+parameters: string label, Vector2 size (0,0 for automatic size)
 - `bool ImGuiButton`
 
 parameters: Vector2 pos
 - `void ImGuiSetCursorPos`
 
+parameters: string label, string pointerToSelectedMemberInt, string items_separated_by_zeros
+- `bool ImGuiCombo`
+
+parameters:
 - `void ImGuiEndChild`
 
 parameters: string text
 - `void ImGuiText`
 
-callbacks:
+example:
+```lua
+
+```
+
+> callbacks:
 
 notes: Will run inside unity thread in an update function
 - `Update()`
