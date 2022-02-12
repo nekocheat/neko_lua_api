@@ -65,6 +65,36 @@ function Unload()
 end
 ```
 
+> ImGui
+
+- `void ImGuiSetItemDefaultFocus()`
+
+parameters: string name, bool isSelected, int imguiFlags, Vector2 size, Vector2 padding
+- `bool ImGuiSelectable`
+
+parameters: string label, Vector2 size, bool border, int imGuiFlags, bool drawLabel
+- `bool ImGuiBeginChild`
+
+parameters: string text
+- `void ImGuiText()`
+
+parameters: string label, string floatArrayPointer, float min_value, float max_value, string format
+- `bool ImGuiSliderFloat`
+
+parameters: string label, string floatArrayPointer
+- `bool ImGuiColorEdit4`
+
+parameters: string label, Vector2 size
+- `bool ImGuiButton`
+
+parameters: Vector2 pos
+- `void ImGuiSetCursorPos`
+
+- `void ImGuiEndChild`
+
+parameters: string text
+- `void ImGuiText`
+
 callbacks:
 
 notes: Will run inside unity thread in an update function
@@ -72,3 +102,9 @@ notes: Will run inside unity thread in an update function
 
 notes: Will run when lua is being unloaded, you should unhook everythnig you've hooked here
 - `Unload()`
+
+notes: Child on the left of the menu
+- `LuaMenuFirstChild()`
+
+notes: Child on the right of the menu
+- `LuaMenuSecondChild()`
