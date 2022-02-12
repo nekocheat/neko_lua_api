@@ -79,7 +79,7 @@ parameters: string label, Vector2 size, bool border, int imGuiFlags, bool drawLa
 parameters: string text
 - `void ImGuiText()`
 
-parameters: string label, string floatArrayPointer, float min_value, float max_value, string format
+parameters: string label, string floatPointer, float min_value, float max_value, string format
 - `bool ImGuiSliderFloat`
 
 parameters: string label, string floatArrayPointer
