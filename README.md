@@ -94,6 +94,9 @@ parameters: Vector2 pos
 parameters: string label, string pointerToSelectedMemberInt, string items_separated_by_zeros
 - `bool ImGuiCombo`
 
+parameters: string label, Vector2 size, string pointerToBool
+- `bool ImGuiCheckbox`
+
 parameters:
 - `void ImGuiEndChild`
 
