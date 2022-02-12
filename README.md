@@ -105,7 +105,29 @@ parameters: string text
 
 example:
 ```lua
+local ffi = require("ffi")
 
+local colorBuffer = ffi.new("float[4]", {0,0,0,0})
+local checkboxBuffer = ffi.new("bool[1]", false)
+local sliderBuffer = ffi.new("float[1]", 0)
+
+function LuaMenuFirstChild()
+  ImGuiText("test")
+  ImGuiColorEdit4("test", tostring(ffi.cast("uint64_t", colorBuffer)))
+  ImGuiCheckbox("test checkbox", tostring(ffi.cast("uint64_t", checkboxBuffer)))
+  ImGuiSliderFloat("test slider", tostring(ffi.cast("uint64_t", sliderBuffer)), 0, 24, "%.2f" )
+  if(ImGuiButton("test button", 0,0))
+  then
+    --button was pressed
+  end
+end
+
+-- to access checkbox value do checkboxBuffer[0]
+-- to access slider value do sliderBuffer[0]
+
+function LuaMenuSecondChild()
+  ImGuiText("test second child")
+end
 ```
 
 > callbacks:
